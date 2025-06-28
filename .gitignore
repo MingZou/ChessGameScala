@@ -1,5 +1,49 @@
-*.class
-*.log
+# === sbt build ===
+target/
+project/target/
+project/project/
+lib_managed/
+src_managed/
+.idea/
+.cache/
+.classpath
+.project
+.settings/
+dist/
+tmp/
+.bloop/
+.metals/
+.bsp/
+project/metals.sbt
+# === IntelliJ ===
+*.iml
+.idea/
+*.iws
+*.ipr
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# === VSCode ===
+.vscode/
+
+# === OS-specific ===
+.DS_Store
+Thumbs.db
+
+# === Logs and temp files ===
+*.log
+*.tmp
+*.swp
+*.bak
+
+# === Scala and Java ===
+*.class
+*.jar
+
+# === JARs and compiled output ===
+*.war
+*.ear
+
+# === User-defined data ===
+data/*.txt
+!data/sample-moves.txt
+!data/sample-moves-invalid.txt
+!data/sample-moves-check.txt
