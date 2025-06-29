@@ -31,19 +31,19 @@ object Main extends App {
 
         val piece = board.get(from)
 
-        if (piece != '.') {
-          if (MoveValidator.isValidMove(piece, from, to, board, currentPlayerIsWhite)) {
-            board = board.move(from, to)
-            println(s"Move: ${posToNotation(from)} -> ${posToNotation(to)}")
-            Renderer.renderBoard(board)
-            currentPlayerIsWhite = !currentPlayerIsWhite
-          } else {
-            println(s"Invalid move for piece $piece: ${posToNotation(from)} -> ${posToNotation(to)}")
-          }
-          Thread.sleep(1000)
+        
+        if (MoveValidator.isValidMove(piece, from, to, board, currentPlayerIsWhite)) {
+          board = board.move(from, to)
+          println(s"Move: ${posToNotation(from)} -> ${posToNotation(to)}")
+          Renderer.renderBoard(board)
+          currentPlayerIsWhite = !currentPlayerIsWhite
         } else {
-          println(s"Invalid move: no piece at ${posToNotation(from)}")
+          println(s"Invalid move for piece $piece: ${posToNotation(from)} -> ${posToNotation(to)}")
+          println("Game stopped due to invalid move.")
+          hasNext = false
         }
+        Thread.sleep(1000)
+        
       }
       else {
         hasNext = false
