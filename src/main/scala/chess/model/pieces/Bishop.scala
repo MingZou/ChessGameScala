@@ -9,14 +9,5 @@ class Bishop extends Piece {
     isCaptureAllowed(to, board, isWhite)
   }
 
-  private def isPathClear(from: Position, to: Position, board: Board): Boolean = {
-    val rowStep = Integer.compare(to.row, from.row)
-    val colStep = Integer.compare(to.col, from.col)
-    var cur = Position(from.row + rowStep, from.col + colStep)
-    while (cur != to) {
-      if (board.get(cur) != '.') return false
-      cur = Position(cur.row + rowStep, cur.col + colStep)
-    }
-    true
-  }
+  
 }

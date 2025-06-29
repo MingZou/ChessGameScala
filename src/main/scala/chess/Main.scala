@@ -31,7 +31,6 @@ object Main extends App {
 
         val piece = board.get(from)
 
-        
         if (MoveValidator.isValidMove(piece, from, to, board, currentPlayerIsWhite)) {
           board = board.move(from, to)
           println(s"Move: ${posToNotation(from)} -> ${posToNotation(to)}")
@@ -42,7 +41,6 @@ object Main extends App {
           println("Game stopped due to invalid move.")
           hasNext = false
         }
-        Thread.sleep(1000)
         
       }
       else {

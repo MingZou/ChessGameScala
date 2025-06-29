@@ -24,4 +24,9 @@ object Board {
     for (col <- 0 until 8) grid(6)(col) = 'P'
     new Board(grid)
   }
+
+  def fromState(rows: Array[String]): Board = {
+    val grid = rows.map(_.toCharArray)
+    new Board(grid)
+  }
 }
