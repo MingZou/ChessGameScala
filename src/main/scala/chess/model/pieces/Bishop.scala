@@ -6,8 +6,7 @@ class Bishop extends Piece {
   def isValidMove(from: Position, to: Position, board: Board, isWhite: Boolean): Boolean = {
     if (math.abs(from.row - to.row) != math.abs(from.col - to.col)) return false
     if (!isPathClear(from, to, board)) return false
-    val target = board.get(to)
-    target == '.' || target.isUpper != isWhite
+    isCaptureAllowed(to, board, isWhite)
   }
 
   private def isPathClear(from: Position, to: Position, board: Board): Boolean = {

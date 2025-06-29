@@ -43,7 +43,7 @@ Thumbs.db
 *.ear
 
 # === User-defined data ===
-data/*.txt
+
 !data/sample-moves.txt
 !data/sample-moves-invalid.txt
 !data/sample-moves-check.txt
